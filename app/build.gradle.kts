@@ -26,15 +26,15 @@ android {
     signingConfigs {
         getByName("debug") {
             storeFile = file("ID523.keystore")
-            keyAlias = "com.do.zarplaty.daet.payday"
-            storePassword = "mypass"
-            keyPassword = "mypass"
+            keyAlias = "mypass"
+            storePassword = "com.do.zarplaty.daet.payday"
+            keyPassword = "com.do.zarplaty.daet.payday"
         }
         create("release") {
-            keyAlias = "com.do.zarplaty.daet.payday"
-            keyPassword = "mypass"
+            keyAlias = "mypass"
+            keyPassword = "com.do.zarplaty.daet.payday"
             storeFile = file("ID523.keystore")
-            storePassword = "mypass"
+            storePassword = "com.do.zarplaty.daet.payday"
             enableV2Signing = true
         }
     }

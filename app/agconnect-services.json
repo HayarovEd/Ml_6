@@ -33,7 +33,7 @@
 		"project_id":"388421841221775794",
 		"app_id":"109593721",
 		"api_key":"DAEDAAM87AW6VcyxsBApe4GmZtyub5Vgx7i5D4eahBN9q4DJYihKAdZ/QASQIg7GnJgd1tMVy7oQWRDJOcZrnYKa3l9L6I6oB291GQ==",
-		"package_name":"com.do.zarplaty.daet.payday"
+		"package_name":"com.dor.zarplaty.daet.payday"
 	},
 	"oauth_client":{
 		"client_id":"109593721",
@@ -41,7 +41,7 @@
 	},
 	"app_info":{
 		"app_id":"109593721",
-		"package_name":"com.do.zarplaty.daet.payday"
+		"package_name":"com.dor.zarplaty.daet.payday"
 	},
 	"service":{
 		"analytics":{
@@ -79,7 +79,7 @@
 	"configuration_version":"3.0",
 	"appInfos":[
 		{
-			"package_name":"com.do.zarplaty.daet.payday",
+			"package_name":"com.dor.zarplaty.daet.payday",
 			"client":{
 				"app_id":"109593721"
 			},

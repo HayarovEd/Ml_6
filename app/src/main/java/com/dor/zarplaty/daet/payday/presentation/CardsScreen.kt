@@ -75,7 +75,7 @@ fun CardsScreen(
                     colors = ButtonDefaults.buttonColors(
                         containerColor = if (typeCard is TypeCard.CardCredit) blue else baseBackground
                     ),
-                    contentPadding = PaddingValues(horizontal = 15.dp, vertical = 5.dp)
+                    contentPadding = PaddingValues(5.dp)
                 ) {
                     Text(
                         color = if (typeCard is TypeCard.CardCredit) white else cardText,
@@ -96,7 +96,7 @@ fun CardsScreen(
                     colors = ButtonDefaults.buttonColors(
                         containerColor = if (typeCard is TypeCard.CardDebit) blue else baseBackground
                     ),
-                    contentPadding = PaddingValues(horizontal = 15.dp, vertical = 5.dp)
+                    contentPadding = PaddingValues(5.dp)
                 ) {
                     Text(
                         color = if (typeCard is TypeCard.CardDebit) white else cardText,
@@ -117,7 +117,7 @@ fun CardsScreen(
                     colors = ButtonDefaults.buttonColors(
                         containerColor = if (typeCard is TypeCard.CardInstallment) blue else baseBackground
                     ),
-                    contentPadding = PaddingValues(horizontal = 15.dp, vertical = 5.dp)
+                    contentPadding = PaddingValues(vertical = 5.dp)
                 ) {
                     Text(
                         color = if (typeCard is TypeCard.CardInstallment) white else cardText,
@@ -172,7 +172,7 @@ fun CardsScreen(
                 LazyColumn(
                     modifier = modifier
                         .fillMaxWidth()
-                        .padding(horizontal = 24.dp),
+                        .padding(horizontal =24.dp),
                     verticalArrangement = Arrangement.spacedBy(16.dp),
                     state = instalmentCardLazyState
                 ) {

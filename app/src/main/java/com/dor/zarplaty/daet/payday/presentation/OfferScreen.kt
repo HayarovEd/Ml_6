@@ -27,6 +27,7 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.stringResource
@@ -61,9 +62,7 @@ fun OfferScreen(
 ) {
     Scaffold(
         modifier = modifier
-            .fillMaxSize()
-            .padding(24.dp)
-            .background(color = baseBackground),
+            .fillMaxSize(),
         topBar = {
             TopAppBar(
                 colors = TopAppBarDefaults.smallTopAppBarColors(
@@ -143,8 +142,11 @@ fun OfferScreen(
             modifier = modifier
                 .padding(paddingValues)
                 .fillMaxSize()
+                .background(color = baseBackground)
+                .padding(24.dp)
+                .clip(shape = RoundedCornerShape(25.dp))
                 .background(color = white)
-                .padding(horizontal = 17.dp)
+                .padding(17.dp)
                 .verticalScroll(rememberScrollState()),
         ) {
             AsyncImage(
