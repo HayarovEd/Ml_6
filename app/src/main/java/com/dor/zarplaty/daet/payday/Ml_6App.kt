@@ -1,6 +1,9 @@
 package com.dor.zarplaty.daet.payday
 
 import android.app.Application
+import com.dor.zarplaty.daet.payday.data.APP_METRICA
+import com.dor.zarplaty.daet.payday.data.MY_TRACKER
+import com.dor.zarplaty.daet.payday.data.USER_X
 import com.my.tracker.MyTracker
 import com.yandex.metrica.YandexMetrica
 import com.yandex.metrica.YandexMetricaConfig
