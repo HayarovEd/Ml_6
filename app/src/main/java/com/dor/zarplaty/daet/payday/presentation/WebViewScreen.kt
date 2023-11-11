@@ -1,4 +1,4 @@
-package org.zaim.na.kartu.polus.presentation
+package com.dor.zarplaty.daet.payday.presentation
 
 import android.content.Context
 import android.content.Intent
@@ -48,10 +48,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.content.FileProvider
-import com.dor.zarplaty.daet.payday.presentation.MainEvent
-import org.zaim.na.kartu.polus.R
-import org.zaim.na.kartu.polus.ui.theme.baseBackground
-import org.zaim.na.kartu.polus.ui.theme.white
+import com.dor.zarplaty.daet.payday.R
+import com.dor.zarplaty.daet.payday.ui.theme.baseBackground
+import com.dor.zarplaty.daet.payday.ui.theme.blue
+import com.dor.zarplaty.daet.payday.ui.theme.white
 import java.io.File
 import java.io.IOException
 
@@ -87,7 +87,7 @@ fun WebViewScreen(
         topBar = {
             TopAppBar(
                 colors = TopAppBarDefaults.smallTopAppBarColors(
-                    containerColor = baseBackground
+                    containerColor = blue
                 ),
                 title = {
                     Row(
@@ -99,17 +99,17 @@ fun WebViewScreen(
                             onEvent(MainEvent.Reconnect)
                         }) {
                             Icon(
-                                imageVector = ImageVector.vectorResource(id = R.drawable.baseline_arrow_back_30),
+                                imageVector = ImageVector.vectorResource(id = R.drawable.outline_arrow_circle_left_27),
                                 tint = white,
                                 contentDescription = ""
                             )
                         }
-                        Spacer(modifier = modifier.width(16.dp))
+                        Spacer(modifier = modifier.width(15.dp))
                         Text(
                             color = white,
-                            fontStyle = FontStyle(R.font.open_sans),
+                            fontStyle = FontStyle(R.font.nunito),
                             fontSize = 20.sp,
-                            fontWeight = FontWeight.Normal,
+                            fontWeight = FontWeight(700),
                             text = offerName
                         )
                     }

@@ -1,4 +1,4 @@
-package org.zaim.na.kartu.polus.presentation
+package com.dor.zarplaty.daet.payday.presentation
 
 import android.os.Build
 import android.widget.Toast
@@ -11,11 +11,15 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.platform.LocalContext
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.dor.zarplaty.daet.payday.domain.model.StatusApplication
+import com.dor.zarplaty.daet.payday.domain.model.StatusApplication.Info
+import com.dor.zarplaty.daet.payday.domain.model.StatusApplication.Offer
 import com.dor.zarplaty.daet.payday.domain.model.TypeCard
-import com.dor.zarplaty.daet.payday.domain.model.basedto.BaseState
-import com.dor.zarplaty.daet.payday.presentation.MainEvent
-import com.dor.zarplaty.daet.payday.presentation.MainViewModel
-import org.zaim.na.kartu.polus.presentation.mock.BaseScreen
+import com.dor.zarplaty.daet.payday.domain.model.basedto.BaseState.Cards
+import com.dor.zarplaty.daet.payday.domain.model.basedto.BaseState.Credits
+import com.dor.zarplaty.daet.payday.domain.model.basedto.BaseState.Loans
+import com.dor.zarplaty.daet.payday.presentation.MainEvent.OnChangeBaseState
+import com.dor.zarplaty.daet.payday.presentation.MainEvent.OnChangeStatusApplication
+import org.zaim.na.kartu.polus.presentation.ConnectScreen
 
 @RequiresApi(Build.VERSION_CODES.TIRAMISU)
 @Composable
@@ -50,17 +54,17 @@ fun Sample(
                 baseState = currentState.baseState,
                 db = state.value.dbData!!,
                 onClickCards = { onEvent(
-                    MainEvent.OnChangeBaseState(
-                        BaseState.Cards(
+                    OnChangeBaseState(
+                        Cards(
                     typeCard = typeCard
                 ))
                 ) },
-                onClickCredits = { onEvent(MainEvent.OnChangeBaseState(BaseState.Credits)) },
-                onClickLoans = { onEvent(MainEvent.OnChangeBaseState(BaseState.Loans)) },
+                onClickCredits = { onEvent(OnChangeBaseState(Credits)) },
+                onClickLoans = { onEvent(OnChangeBaseState(Loans)) },
                 onClickRules = {
                     onEvent(
-                        MainEvent.OnChangeStatusApplication(
-                            StatusApplication.Info(
+                        OnChangeStatusApplication(
+                            Info(
                                 currentBaseState = currentState.baseState,
                                 content = state.value.dbData!!.appConfig.privacyPolicyHtml
                             )
@@ -84,16 +88,16 @@ fun Sample(
         }
 
         is StatusApplication.Mock -> {
-            BaseScreen()
+            NoInternetScreen(onEvent = viewModel::onEvent)
         }
 
-        is StatusApplication.Info -> {
+        is Info -> {
         }
 
-        is StatusApplication.Offer -> {
+        is Offer -> {
             OfferScreen(
-                elementOffer = (state.value.statusApplication as StatusApplication.Offer).elementOffer,
-                baseState = (state.value.statusApplication as StatusApplication.Offer).currentBaseState,
+                elementOffer = (state.value.statusApplication as Offer).elementOffer,
+                baseState = (state.value.statusApplication as Offer).currentBaseState,
                 onEvent = viewModel::onEvent,
             )
         }

@@ -24,7 +24,6 @@ import com.dor.zarplaty.daet.payday.data.LINK
 import com.dor.zarplaty.daet.payday.data.SHARED_APPSFLYER_INSTANCE_ID
 import com.dor.zarplaty.daet.payday.data.SHARED_DATA
 import com.dor.zarplaty.daet.payday.ui.theme.Ml_6Theme
-import org.zaim.na.kartu.polus.presentation.Sample
 
 
 @AndroidEntryPoint

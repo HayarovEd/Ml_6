@@ -1,4 +1,4 @@
-package org.zaim.na.kartu.polus.presentation
+package com.dor.zarplaty.daet.payday.presentation
 
 import android.annotation.SuppressLint
 import android.widget.TextView
@@ -15,7 +15,6 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -28,7 +27,6 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.stringResource
@@ -43,17 +41,14 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.text.HtmlCompat
 import coil.compose.AsyncImage
-import org.zaim.na.kartu.polus.R
-import com.dor.zarplaty.daet.payday.data.VALUE_ONE
+import com.dor.zarplaty.daet.payday.R
+import com.dor.zarplaty.daet.payday.R.font
 import com.dor.zarplaty.daet.payday.domain.model.ElementOffer
 import com.dor.zarplaty.daet.payday.domain.model.StatusApplication
 import com.dor.zarplaty.daet.payday.domain.model.basedto.BaseState
-import com.dor.zarplaty.daet.payday.presentation.MainEvent
-import org.zaim.na.kartu.polus.ui.theme.baseBackground
-import org.zaim.na.kartu.polus.ui.theme.darkText
-import org.zaim.na.kartu.polus.ui.theme.grey
-import org.zaim.na.kartu.polus.ui.theme.white
-import org.zaim.na.kartu.polus.ui.theme.yellow
+import com.dor.zarplaty.daet.payday.ui.theme.baseBackground
+import com.dor.zarplaty.daet.payday.ui.theme.blue
+import com.dor.zarplaty.daet.payday.ui.theme.white
 
 @SuppressLint("ResourceAsColor")
 @OptIn(ExperimentalMaterial3Api::class)
@@ -66,11 +61,13 @@ fun OfferScreen(
 ) {
     Scaffold(
         modifier = modifier
-            .fillMaxSize(),
+            .fillMaxSize()
+            .padding(24.dp)
+            .background(color = baseBackground),
         topBar = {
             TopAppBar(
                 colors = TopAppBarDefaults.smallTopAppBarColors(
-                    containerColor = baseBackground
+                    containerColor = blue
                 ),
                 title = {
                     Row(
@@ -86,24 +83,24 @@ fun OfferScreen(
                             )
                         }) {
                             Icon(
-                                imageVector = ImageVector.vectorResource(id = R.drawable.baseline_arrow_back_30),
+                                imageVector = ImageVector.vectorResource(id = R.drawable.outline_arrow_circle_left_27),
                                 tint = white,
                                 contentDescription = ""
                             )
                         }
-                        Spacer(modifier = modifier.width(16.dp))
+                        Spacer(modifier = modifier.width(15.dp))
                         Text(
                             color = white,
-                            fontStyle = FontStyle(R.font.open_sans),
+                            fontStyle = FontStyle(R.font.nunito),
                             fontSize = 22.sp,
-                            fontWeight = FontWeight(600),
+                            fontWeight = FontWeight(700),
                             text = elementOffer.name
                         )
                     }
                 }
             )
         },
-        bottomBar = {
+        /*bottomBar = {
             BottomAppBar(
                 containerColor = baseBackground
             ) {
@@ -140,14 +137,14 @@ fun OfferScreen(
                     )
                 }
             }
-        }
+        }*/
     ) { paddingValues ->
         Column(
             modifier = modifier
                 .padding(paddingValues)
                 .fillMaxSize()
-                .background(color = baseBackground)
-                .padding(horizontal = 24.dp)
+                .background(color = white)
+                .padding(horizontal = 17.dp)
                 .verticalScroll(rememberScrollState()),
         ) {
             AsyncImage(
@@ -157,42 +154,10 @@ fun OfferScreen(
                 contentScale = ContentScale.FillWidth,
                 contentDescription = ""
             )
-            Spacer(modifier = modifier.height(32.dp))
-            RowData(
-                title = stringResource(id = R.string.amount),
-                content = elementOffer.amount
-            )
-            if (elementOffer.showPercent == VALUE_ONE) {
-                Spacer(modifier = modifier.height(8.dp))
-                RowData(
-                    title = stringResource(id = R.string.bet),
-                    content = elementOffer.bet
-                )
-            }
-            if (elementOffer.showTerm == VALUE_ONE) {
-                Spacer(modifier = modifier.height(8.dp))
-                RowData(
-                    title = stringResource(id = R.string.term),
-                    content = elementOffer.term
-                )
-            }
             Spacer(modifier = modifier.height(21.dp))
-            RowCard(
-                showVisa = elementOffer.showVisa,
-                showMaster = elementOffer.showMaster,
-                showYandex = elementOffer.showYandex,
-                showMir = elementOffer.showMir,
-                showQivi = elementOffer.showQiwi,
-                showCache = elementOffer.showCache
-            )
-            Spacer(modifier = modifier.height(24.dp))
-
             AndroidView(
                 modifier = modifier
-                    .fillMaxWidth()
-                    .clip(shape= RoundedCornerShape(5.dp))
-                    .background(color = white)
-                    .padding(5.dp),
+                    .fillMaxWidth(),
                 factory = { context -> TextView(context) },
                 update = {
                     it.setTextColor(R.color.white)
@@ -202,6 +167,64 @@ fun OfferScreen(
                     )
                 }
             )
+            /*Spacer(modifier = modifier.height(13.dp))
+            RowData(
+                title = stringResource(id = string.amount),
+                content = elementOffer.amount
+            )
+            if (elementOffer.showPercent == VALUE_ONE) {
+                Spacer(modifier = modifier.height(8.dp))
+                RowData(
+                    title = stringResource(id = string.bet),
+                    content = elementOffer.bet
+                )
+            }
+            if (elementOffer.showTerm == VALUE_ONE) {
+                Spacer(modifier = modifier.height(8.dp))
+                RowData(
+                    title = stringResource(id = string.term),
+                    content = elementOffer.term
+                )
+            }*/
+            Spacer(modifier = modifier.height(13.dp))
+            RowCard(
+                showVisa = elementOffer.showVisa,
+                showMaster = elementOffer.showMaster,
+                showYandex = elementOffer.showYandex,
+                showMir = elementOffer.showMir,
+                showQivi = elementOffer.showQiwi,
+                showCache = elementOffer.showCache
+            )
+            Spacer(modifier = modifier.height(35.dp))
+            Button(
+                modifier = modifier
+                    .fillMaxWidth(),
+                shape = RoundedCornerShape(25.dp),
+                contentPadding = PaddingValues(
+                    vertical = 7.dp
+                ),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = blue,
+                    contentColor = white,
+                ),
+                onClick = {
+                    onEvent(
+                        MainEvent.OnGoToWeb(
+                            urlOffer = elementOffer.order,
+                            nameOffer = elementOffer.name
+                        )
+                    )
+                }
+            ) {
+                Text(
+                    text = stringResource(id = R.string.checkout),
+                    style = TextStyle(
+                        fontSize = 20.sp,
+                        fontFamily = FontFamily(Font(font.nunito)),
+                        fontWeight = FontWeight(700),
+                    )
+                )
+            }
         }
     }
 }
