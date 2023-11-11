@@ -28,6 +28,7 @@ import com.dor.zarplaty.daet.payday.domain.model.StatusApplication
 import com.dor.zarplaty.daet.payday.domain.model.basedto.BaseState
 import com.dor.zarplaty.daet.payday.domain.model.basedto.CardsDebit
 import com.dor.zarplaty.daet.payday.presentation.MainEvent
+import com.dor.zarplaty.daet.payday.presentation.RowButtons
 import com.dor.zarplaty.daet.payday.presentation.RowCard
 import com.dor.zarplaty.daet.payday.presentation.RowData
 import org.zaim.na.kartu.polus.ui.theme.baseBackground

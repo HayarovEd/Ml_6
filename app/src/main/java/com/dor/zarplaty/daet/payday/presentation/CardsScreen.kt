@@ -1,5 +1,5 @@
 
-package org.zaim.na.kartu.polus.presentation
+package com.dor.zarplaty.daet.payday.presentation
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -14,28 +14,32 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import org.zaim.na.kartu.polus.R
+import com.dor.zarplaty.daet.payday.R
 import com.dor.zarplaty.daet.payday.domain.model.TypeCard
 import com.dor.zarplaty.daet.payday.domain.model.basedto.BaseState
 import com.dor.zarplaty.daet.payday.domain.model.basedto.CardsCredit
 import com.dor.zarplaty.daet.payday.domain.model.basedto.CardsDebit
 import com.dor.zarplaty.daet.payday.domain.model.basedto.CardsInstallment
-import com.dor.zarplaty.daet.payday.presentation.MainEvent
-import org.zaim.na.kartu.polus.ui.theme.baseBackground
-import org.zaim.na.kartu.polus.ui.theme.white
-import org.zaim.na.kartu.polus.ui.theme.yellow
+import com.dor.zarplaty.daet.payday.ui.theme.baseBackground
+import com.dor.zarplaty.daet.payday.ui.theme.blue
+import com.dor.zarplaty.daet.payday.ui.theme.cardText
+import com.dor.zarplaty.daet.payday.ui.theme.white
+import org.zaim.na.kartu.polus.presentation.ItemDebitCard
+import org.zaim.na.kartu.polus.presentation.ItemInstallmentCard
 
 @Composable
 fun CardsScreen(
@@ -66,17 +70,19 @@ fun CardsScreen(
         ) {
             if (!creditCards.isNullOrEmpty()) {
                 Button(
-                    modifier = modifier.weight(1f),
+                    modifier = modifier
+                        .weight(1f)
+                        .clip(shape = RoundedCornerShape(5.dp)),
                     onClick = { onEvent(MainEvent.OnChangeTypeCard(TypeCard.CardCredit)) },
                     colors = ButtonDefaults.buttonColors(
-                        containerColor = if (typeCard is TypeCard.CardCredit) yellow else baseBackground
+                        containerColor = if (typeCard is TypeCard.CardCredit) blue else baseBackground
                     ),
                     contentPadding = PaddingValues(horizontal = 15.dp, vertical = 5.dp)
                 ) {
                     Text(
-                        color = if (typeCard is TypeCard.CardCredit) baseBackground else white,
-                        fontStyle = FontStyle(R.font.open_sans),
-                        fontSize = 13.sp,
+                        color = if (typeCard is TypeCard.CardCredit) white else cardText,
+                        fontStyle = FontStyle(R.font.nunito),
+                        fontSize = 16.sp,
                         fontWeight = FontWeight(600),
                         text = stringResource(id = R.string.credit),
                         textAlign = TextAlign.Center
@@ -85,17 +91,19 @@ fun CardsScreen(
             }
             if (!debitCards.isNullOrEmpty()) {
                 Button(
-                    modifier = modifier.weight(1f),
+                    modifier = modifier
+                        .weight(1f)
+                        .clip(shape = RoundedCornerShape(5.dp)),
                     onClick = { onEvent(MainEvent.OnChangeTypeCard(TypeCard.CardDebit)) },
                     colors = ButtonDefaults.buttonColors(
-                        containerColor = if (typeCard is TypeCard.CardDebit) yellow else baseBackground
+                        containerColor = if (typeCard is TypeCard.CardDebit) blue else baseBackground
                     ),
                     contentPadding = PaddingValues(horizontal = 15.dp, vertical = 5.dp)
                 ) {
                     Text(
-                        color = if (typeCard is TypeCard.CardDebit) baseBackground else white,
-                        fontStyle = FontStyle(R.font.open_sans),
-                        fontSize = 13.sp,
+                        color = if (typeCard is TypeCard.CardDebit) white else cardText,
+                        fontStyle = FontStyle(R.font.nunito),
+                        fontSize = 16.sp,
                         fontWeight = FontWeight(600),
                         text = stringResource(id = R.string.debit),
                         textAlign = TextAlign.Center
@@ -104,17 +112,19 @@ fun CardsScreen(
             }
             if (!installmentCards.isNullOrEmpty()) {
                 Button(
-                    modifier = modifier.weight(1f),
+                    modifier = modifier
+                        .weight(1f)
+                        .clip(shape = RoundedCornerShape(5.dp)),
                     onClick = { onEvent(MainEvent.OnChangeTypeCard(TypeCard.CardInstallment)) },
                     colors = ButtonDefaults.buttonColors(
-                        containerColor = if (typeCard is TypeCard.CardInstallment) yellow else baseBackground
+                        containerColor = if (typeCard is TypeCard.CardInstallment) blue else baseBackground
                     ),
                     contentPadding = PaddingValues(horizontal = 15.dp, vertical = 5.dp)
                 ) {
                     Text(
-                        color = if (typeCard is TypeCard.CardInstallment) baseBackground else white,
-                        fontStyle = FontStyle(R.font.open_sans),
-                        fontSize = 13.sp,
+                        color = if (typeCard is TypeCard.CardInstallment) white else cardText,
+                        fontStyle = FontStyle(R.font.nunito),
+                        fontSize = 16.sp,
                         fontWeight = FontWeight(600),
                         text = stringResource(id = R.string.installment),
                         textAlign = TextAlign.Center
@@ -122,7 +132,7 @@ fun CardsScreen(
                 }
             }
         }
-        Spacer(modifier = modifier.height(24.dp))
+        Spacer(modifier = modifier.height(20.dp))
         when (typeCard) {
             TypeCard.CardCredit -> {
                 LazyColumn(

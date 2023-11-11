@@ -1,5 +1,5 @@
 
-package org.zaim.na.kartu.polus.presentation
+package com.dor.zarplaty.daet.payday.presentation
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -25,14 +25,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import org.zaim.na.kartu.polus.R
+import com.dor.zarplaty.daet.payday.R
 import com.dor.zarplaty.daet.payday.domain.model.ElementOffer
 import com.dor.zarplaty.daet.payday.domain.model.StatusApplication
 import com.dor.zarplaty.daet.payday.domain.model.basedto.BaseState
-import com.dor.zarplaty.daet.payday.presentation.MainEvent
-import org.zaim.na.kartu.polus.ui.theme.baseBackground
-import org.zaim.na.kartu.polus.ui.theme.darkText
-import org.zaim.na.kartu.polus.ui.theme.yellow
+import com.dor.zarplaty.daet.payday.ui.theme.baseBackground
+import com.dor.zarplaty.daet.payday.ui.theme.blue
+import com.dor.zarplaty.daet.payday.ui.theme.white
 
 @Composable
 fun RowButtons(
@@ -65,8 +64,8 @@ fun RowButtons(
         Box(
             modifier = modifier
                 .weight(1f)
-                .border(width = 3.dp, color = yellow, shape = RoundedCornerShape(10.dp))
-                .clip(shape = RoundedCornerShape(10.dp))
+                .border(width = 2.dp, color = blue, shape = RoundedCornerShape(25.dp))
+                .clip(shape = RoundedCornerShape(25.dp))
                 .background(color = baseBackground)
                 .clickable(onClick = {
                     onEvent(
@@ -101,7 +100,7 @@ fun RowButtons(
             Icon(
                 modifier = modifier.align(alignment = Alignment.Center),
                 imageVector = ImageVector.vectorResource(id = R.drawable.carbon_overflow),
-                tint = yellow,
+                tint = blue,
                 contentDescription = ""
             )
         }
@@ -109,8 +108,8 @@ fun RowButtons(
         Box(
             modifier = modifier
                 .weight(3f)
-                .clip(shape = RoundedCornerShape(10.dp))
-                .background(color = yellow)
+                .clip(shape = RoundedCornerShape(25.dp))
+                .background(color = blue)
                 .clickable(onClick = {
                     onEvent(
                         MainEvent.OnGoToWeb(
@@ -123,8 +122,8 @@ fun RowButtons(
         ) {
             Text(
                 modifier = modifier.align(alignment = Alignment.Center),
-                color = darkText,
-                fontStyle = FontStyle(R.font.open_sans),
+                color = white,
+                fontStyle = FontStyle(R.font.nunito),
                 fontSize = 20.sp,
                 fontWeight = FontWeight(600),
                 text = titleOffer,
