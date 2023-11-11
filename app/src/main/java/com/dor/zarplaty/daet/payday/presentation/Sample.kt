@@ -19,7 +19,6 @@ import com.dor.zarplaty.daet.payday.domain.model.basedto.BaseState.Credits
 import com.dor.zarplaty.daet.payday.domain.model.basedto.BaseState.Loans
 import com.dor.zarplaty.daet.payday.presentation.MainEvent.OnChangeBaseState
 import com.dor.zarplaty.daet.payday.presentation.MainEvent.OnChangeStatusApplication
-import org.zaim.na.kartu.polus.presentation.ConnectScreen
 
 @RequiresApi(Build.VERSION_CODES.TIRAMISU)
 @Composable
