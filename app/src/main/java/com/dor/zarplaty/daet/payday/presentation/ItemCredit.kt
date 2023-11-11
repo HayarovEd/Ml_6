@@ -1,5 +1,5 @@
 
-package org.zaim.na.kartu.polus.presentation
+package com.dor.zarplaty.daet.payday.presentation
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -21,19 +21,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
-import org.zaim.na.kartu.polus.R
+import com.dor.zarplaty.daet.payday.R
 import com.dor.zarplaty.daet.payday.data.VALUE_ONE
 import com.dor.zarplaty.daet.payday.domain.model.ElementOffer
 import com.dor.zarplaty.daet.payday.domain.model.StatusApplication
 import com.dor.zarplaty.daet.payday.domain.model.basedto.BaseState
 import com.dor.zarplaty.daet.payday.domain.model.basedto.Credit
-import com.dor.zarplaty.daet.payday.presentation.MainEvent
-import com.dor.zarplaty.daet.payday.presentation.RowButtons
-import com.dor.zarplaty.daet.payday.presentation.RowCard
-import com.dor.zarplaty.daet.payday.presentation.RowData
-import org.zaim.na.kartu.polus.ui.theme.baseBackground
-import org.zaim.na.kartu.polus.ui.theme.grey
-import org.zaim.na.kartu.polus.ui.theme.white
+import com.dor.zarplaty.daet.payday.ui.theme.titleText
+import com.dor.zarplaty.daet.payday.ui.theme.white
 
 @Composable
 fun ItemCredit(
@@ -45,11 +40,10 @@ fun ItemCredit(
     Column(
         modifier = modifier
             .fillMaxWidth()
-            .border(width = 3.dp, color = grey, shape = RoundedCornerShape(15.dp))
-            .padding(end = 4.dp, bottom = 4.dp)
-            .clip(shape = RoundedCornerShape(16.dp))
-            .background(color = baseBackground)
-            .padding(15.dp)
+            //.border(width = 3.dp, color = grey, shape = RoundedCornerShape(15.dp))
+            .clip(shape = RoundedCornerShape(25.dp))
+            .background(color = white)
+            .padding(16.dp)
     ) {
         AsyncImage(
             modifier = modifier
@@ -88,9 +82,9 @@ fun ItemCredit(
         )
         Spacer(modifier = modifier.height(13.dp))
         Text(
-            color = white,
-            fontStyle = FontStyle(R.font.open_sans),
-            fontSize = 19.sp,
+            color = titleText,
+            fontStyle = FontStyle(R.font.nunito),
+            fontSize = 20.sp,
             fontWeight = FontWeight(700),
             text = credit.name
         )

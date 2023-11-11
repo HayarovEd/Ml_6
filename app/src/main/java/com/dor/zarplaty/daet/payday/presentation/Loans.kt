@@ -1,5 +1,5 @@
 
-package org.zaim.na.kartu.polus.presentation
+package com.dor.zarplaty.daet.payday.presentation
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.background
@@ -17,8 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.dor.zarplaty.daet.payday.domain.model.basedto.BaseState
 import com.dor.zarplaty.daet.payday.domain.model.basedto.Loan
-import com.dor.zarplaty.daet.payday.presentation.MainEvent
-import org.zaim.na.kartu.polus.ui.theme.baseBackground
+import com.dor.zarplaty.daet.payday.ui.theme.baseBackground
 
 @SuppressLint("CoroutineCreationDuringComposition")
 @Composable

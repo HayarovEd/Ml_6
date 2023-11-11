@@ -40,7 +40,7 @@ fun ItemCreditCard(
         modifier = modifier
             .fillMaxWidth()
             //.border(width = 3.dp, color = grey, shape = RoundedCornerShape(15.dp))
-            .clip(shape = RoundedCornerShape(16.dp))
+            .clip(shape = RoundedCornerShape(25.dp))
             .background(color = white)
             .padding(16.dp)
     ) {

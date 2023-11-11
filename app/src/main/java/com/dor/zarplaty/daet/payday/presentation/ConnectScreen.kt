@@ -41,8 +41,6 @@ import com.dor.zarplaty.daet.payday.domain.model.basedto.CardsInstallment
 import com.dor.zarplaty.daet.payday.ui.theme.blue
 import com.dor.zarplaty.daet.payday.ui.theme.grey
 import com.dor.zarplaty.daet.payday.ui.theme.white
-import org.zaim.na.kartu.polus.presentation.Credits
-import org.zaim.na.kartu.polus.presentation.Loans
 
 
 @OptIn(ExperimentalMaterial3Api::class)

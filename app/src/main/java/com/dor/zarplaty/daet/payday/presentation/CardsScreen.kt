@@ -38,8 +38,6 @@ import com.dor.zarplaty.daet.payday.ui.theme.baseBackground
 import com.dor.zarplaty.daet.payday.ui.theme.blue
 import com.dor.zarplaty.daet.payday.ui.theme.cardText
 import com.dor.zarplaty.daet.payday.ui.theme.white
-import org.zaim.na.kartu.polus.presentation.ItemDebitCard
-import org.zaim.na.kartu.polus.presentation.ItemInstallmentCard
 
 @Composable
 fun CardsScreen(
