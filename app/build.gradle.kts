@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace = "com.dor.zarplaty.daet.payday"
+    namespace = "com.zarplaty.daet.payday"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.dor.zarplaty.daet.payday"
+        applicationId = "com.zarplaty.daet.payday"
         minSdk = 21
         targetSdk = 34
         versionCode = 1
