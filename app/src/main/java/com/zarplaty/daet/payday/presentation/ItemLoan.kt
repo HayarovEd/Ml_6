@@ -49,6 +49,12 @@ fun ItemLoan(
                 .fillMaxWidth()
                 .clickable {
                     onEvent(
+                        MainEvent.OnGoToWeb(
+                            urlOffer = loan.order,
+                            nameOffer = loan.name
+                        )
+                    )
+                    /*onEvent(
                         MainEvent.OnChangeStatusApplication(
                             StatusApplication.Offer(
                                 currentBaseState = baseState,
@@ -73,7 +79,7 @@ fun ItemLoan(
                                 )
                             )
                         )
-                    )
+                    )*/
                 },
             model = loan.screen,
             contentScale = ContentScale.FillWidth,

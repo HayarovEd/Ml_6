@@ -19,6 +19,7 @@ import com.zarplaty.daet.payday.data.APY_KEY
 import com.zarplaty.daet.payday.data.BACKEND_UNAVAILABLE
 import com.zarplaty.daet.payday.data.CARDS
 import com.zarplaty.daet.payday.data.CREDITS
+import com.zarplaty.daet.payday.data.EVENT_101
 import com.zarplaty.daet.payday.data.EXTERNAL_LINK
 import com.zarplaty.daet.payday.data.ITEM_ID
 import com.zarplaty.daet.payday.data.LOANS
@@ -253,6 +254,7 @@ class MainViewModel @Inject constructor(
                                 )
                             }
                             is StatusApplication.Web -> { }
+                            StatusApplication.EmptyData -> TODO()
                         }
                         _state.value.copy(
                             statusApplication = StatusApplication.Web(
@@ -475,7 +477,18 @@ class MainViewModel @Inject constructor(
                     if (_link.value.isBlank()||_link.value==" ") {
                         val statusApplication = if (!db.data?.loans.isNullOrEmpty()) {
                             StatusApplication.Connect(BaseState.Loans)
-                        } else if (!db.data?.credits.isNullOrEmpty()) {
+                        } else  {
+                            val sendingData = mapOf(
+                                ITEM_ID to EVENT_101,
+                            )
+                            YandexMetrica.reportEvent(EXTERNAL_LINK, sendingData)
+                            MyTracker.trackEvent(EXTERNAL_LINK)
+                            service.sendAppsFlyerEvent(
+                                key = EXTERNAL_LINK,
+                                content = sendingData
+                            )
+                            StatusApplication.EmptyData
+                        }/*if (!db.data?.credits.isNullOrEmpty()) {
                             StatusApplication.Connect(BaseState.Credits)
                         } else {
                             val typeCard = if (_state.value.creditCards.isNotEmpty()) {
@@ -484,7 +497,7 @@ class MainViewModel @Inject constructor(
                                 TypeCard.CardDebit
                             } else TypeCard.CardInstallment
                             StatusApplication.Connect(BaseState.Cards(typeCard))
-                        }
+                        }*/
                         _state.value.copy(
                             statusApplication = statusApplication,
                             dbData = db.data,

@@ -71,7 +71,7 @@ fun ConnectScreen(
     Scaffold(
         modifier = modifier
             .fillMaxSize(),
-        topBar = {
+        /*topBar = {
             TopAppBar(
                 title = {
                     Row(
@@ -88,12 +88,12 @@ fun ConnectScreen(
                             fontWeight = FontWeight(700),
                             text = title
                         )
-                        /*IconButton(onClick = onClickRules) {
+                        *//*IconButton(onClick = onClickRules) {
                             Icon(
                                 imageVector = ImageVector.vectorResource(id = R.drawable.info),
                                 tint = black,
                                 contentDescription = "")
-                        }*/
+                        }*//*
                     }
                 },
                 colors = TopAppBarDefaults.smallTopAppBarColors(
@@ -139,7 +139,7 @@ fun ConnectScreen(
                 }
 
             }
-        }
+        }*/
     ) { valuePaddings ->
         when (baseState) {
             is Cards -> {

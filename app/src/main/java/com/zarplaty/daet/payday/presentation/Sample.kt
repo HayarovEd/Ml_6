@@ -112,6 +112,10 @@ fun Sample(
         StatusApplication.NoConnect -> {
             NoInternetScreen(onEvent = viewModel::onEvent)
         }
+
+        StatusApplication.EmptyData -> {
+            EmptyDataScreen()
+        }
     }
 
 }

@@ -5,6 +5,7 @@ import com.zarplaty.daet.payday.domain.model.basedto.BaseState
 sealed class StatusApplication {
     object Loading: StatusApplication()
     object Mock : StatusApplication()
+    object EmptyData : StatusApplication()
     class Connect (val baseState: BaseState): StatusApplication()
 
     class Offer (

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Срочно Cash - займы онлайн</string>
+    <string name="app_name">Срочно займ - займы онлайн</string>
 
     <string name="loans">Займы</string>
     <string name="cards">Карты</string>
@@ -12,6 +12,7 @@
     <string name="installment">Рассрочка</string>
     <string name="rules">Пользовательское соглашение</string>
     <string name="checkout">Оформить</string>
+    <string name="error_101">Ошибка 101</string>
 
     //No Internet
     <string name="not_connect">Нет соединения</string>

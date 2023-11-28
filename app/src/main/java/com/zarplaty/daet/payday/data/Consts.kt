@@ -32,6 +32,7 @@ const val REQUEST_DB = "requestdb"
 const val REQUEST_DATE = "requestdate"
 const val BACKEND_UNAVAILABLE = "backend_unavailable"
 const val EXTERNAL_LINK = "external_link"
+const val EVENT_101 = "101"
 
 const val ITEM_ID = "itemId"
 const val MORE_DETAILS = "more_details"
