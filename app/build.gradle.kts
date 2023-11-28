@@ -7,15 +7,15 @@ plugins {
 }
 
 android {
-    namespace = "com.zarplaty.daet.payday"
+    namespace = "com.forexinsights"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.zarplaty.daet.payday"
+        applicationId = "com.forexinsights"
         minSdk = 21
         targetSdk = 34
-        versionCode = 2
-        versionName = "2.0"
+        versionCode = 1
+        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -25,16 +25,16 @@ android {
 
     signingConfigs {
         getByName("debug") {
-            storeFile = file("ID523.keystore")
-            keyAlias = "mypass"
-            storePassword = "com.do.zarplaty.daet.payday"
-            keyPassword = "com.do.zarplaty.daet.payday"
+            storeFile = file("ID5233.keystore")
+            keyAlias = "com.forexinsights"
+            storePassword = "com.forexinsights"
+            keyPassword = "com.forexinsights"
         }
         create("release") {
-            keyAlias = "mypass"
-            keyPassword = "com.do.zarplaty.daet.payday"
-            storeFile = file("ID523.keystore")
-            storePassword = "com.do.zarplaty.daet.payday"
+            keyAlias = "com.forexinsights"
+            keyPassword = "com.forexinsights"
+            storeFile = file("ID5233.keystore")
+            storePassword = "com.forexinsights"
             enableV2Signing = true
         }
     }

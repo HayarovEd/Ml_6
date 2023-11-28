@@ -27,21 +27,21 @@
 	},
 	"client":{
 		"cp_id":"20007000031235015",
-		"product_id":"388421841221779587",
-		"client_id":"1288516796902571328",
-		"client_secret":"BAACF964EDE088E5883E7F7F5B2BDB8F31C67531E72B7638FA8E6D4F223AEE8C",
-		"project_id":"388421841221779587",
-		"app_id":"109615231",
-		"api_key":"DAEDALe5irGp5+TDj/Lki8ym7Gc5FH0yBsVzx0lLG8VLXOj0FyBegwciCwoRb0wcqvVxkC+s5CHzPUBkUKjwA1FSGYoZb8dDPc/K2g==",
-		"package_name":"com.zarplaty.daet.payday"
+		"product_id":"388421841221815347",
+		"client_id":"1299492014915641792",
+		"client_secret":"8E5D9D31F9A1D5364C23E6E8037F94077E5417F0C0B54E81980BC40EF6049ECF",
+		"project_id":"388421841221815347",
+		"app_id":"109735035",
+		"api_key":"DAEDAMjULGa9/2c8Vmo2oRyVTeLcNnIVdzrd1QeFTzw5LFGeoUIV8trhDtRgjItzlCctv/smihzzQrPy0NqYPIHIC8oovVPRA06weQ==",
+		"package_name":"com.forexinsights"
 	},
 	"oauth_client":{
-		"client_id":"109615231",
+		"client_id":"109735035",
 		"client_type":1
 	},
 	"app_info":{
-		"app_id":"109615231",
-		"package_name":"com.zarplaty.daet.payday"
+		"app_id":"109735035",
+		"package_name":"com.forexinsights"
 	},
 	"service":{
 		"analytics":{
@@ -79,17 +79,17 @@
 	"configuration_version":"3.0",
 	"appInfos":[
 		{
-			"package_name":"com.zarplaty.daet.payday",
+			"package_name":"com.forexinsights",
 			"client":{
-				"app_id":"109615231"
+				"app_id":"109735035"
 			},
 			"app_info":{
-				"package_name":"com.zarplaty.daet.payday",
-				"app_id":"109615231"
+				"package_name":"com.forexinsights",
+				"app_id":"109735035"
 			},
 			"oauth_client":{
 				"client_type":1,
-				"client_id":"109615231"
+				"client_id":"109735035"
 			}
 		}
 	]
