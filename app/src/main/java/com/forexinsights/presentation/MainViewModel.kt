@@ -256,7 +256,7 @@ class MainViewModel @Inject constructor(
                                 )
                             }
                             is StatusApplication.Web -> { }
-                            StatusApplication.EmptyData -> TODO()
+                            StatusApplication.EmptyData -> { }
                         }
                         _state.value.copy(
                             statusApplication = StatusApplication.Web(
